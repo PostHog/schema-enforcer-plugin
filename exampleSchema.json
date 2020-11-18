@@ -1,0 +1,22 @@
+{
+    "onlyIngestEventsFromFile": true,
+    "eventSchemas": {
+        "testEvent": {
+            "acceptOnlySchemaProps": true,
+            "schema": {
+                "foo": {
+                    "type": "string",
+                    "required": false
+                },
+                "bar": {
+                    "type": "number",
+                    "required": true
+                },
+                "baz": {
+                    "type": "boolean",
+                    "required": false
+                }
+            } 
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "posthog-schema-enforcer-plugin",
+  "url": "https://github.com/PostHog/posthog-schema-enforcer-plugin",
+  "description": "Enforce schema on events to ensure clean data.",
+  "main": "index.js",
+  "lib": "lib.js",
+  "config": {
+    "eventSchemaFile": {
+        "markdown": "Link to file gen",
+        "name": "Event Schema JSON File",
+        "type": "attachment",
+        "hint": "A valid JSON file",
+        "required": true,
+        "order": 1
+    }
+  }
+}
