@@ -1,4 +1,4 @@
-import { SchemaObject } from 'types'
+import { SchemaObject } from './types'
 
 const ACCEPTED_TYPES = new Set(['number', 'string', 'boolean'])
 const isBool = (valueToCheck) => typeof valueToCheck === 'boolean'
