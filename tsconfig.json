@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "ES2015",
+        "declaration": true,
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "ES2015",
+        "sourceMap": true,
+        "outDir": "./dist",
+        "baseUrl": "./src",
+        "incremental": true,
+        "resolveJsonModule": true,
+        "moduleResolution": "node"
+    },
+    "exclude": ["node_modules", "dist"]
+}

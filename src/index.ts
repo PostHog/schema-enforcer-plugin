@@ -1,4 +1,17 @@
-async function setupPlugin({ attachments, global }) {
+import { PluginMeta, PluginEvent, PluginAttachment } from 'posthog-plugins'
+import { SchemaObject, SchemaEvent } from './types'
+import { isValidSchemaFile } from './lib'
+
+interface Meta extends PluginMeta {
+    attachments: {
+        eventSchemaFile?: PluginAttachment
+    },
+    global: {
+        schemaFile?: SchemaObject
+    }
+}
+
+export function setupPlugin({ attachments, global }: Meta) {
     try {
         global.schemaFile = JSON.parse(attachments.eventSchemaFile.contents.toString())
     } catch {
@@ -9,9 +22,9 @@ async function setupPlugin({ attachments, global }) {
 
 }
 
-async function processEvent(event, { global }) {
+export function processEvent(event: PluginEvent, { global }) {
     const schema = global.schemaFile
-    const eventSchema = schema.eventSchemas[event.event]
+    const eventSchema: SchemaEvent = schema.eventSchemas[event.event]
 
     // For events not specified in the schema file
     if (!eventSchema) {

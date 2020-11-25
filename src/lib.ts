@@ -1,7 +1,9 @@
+import { SchemaObject } from 'types'
+
 const ACCEPTED_TYPES = new Set(['number', 'string', 'boolean'])
 const isBool = (valueToCheck) => typeof valueToCheck === 'boolean'
 
-const areValuesValid = (jsonSchema) => {
+const areValuesValid = (jsonSchema: SchemaObject) => {
     try {
         for (const eventSchema of Object.values(jsonSchema.eventSchemas)) {
 
@@ -31,7 +33,7 @@ const areValuesValid = (jsonSchema) => {
 }
 
 
-const isValidSchemaFile = (jsonSchema) => {
+export const isValidSchemaFile = (jsonSchema: SchemaObject) => {
     const checks = [
         {
             "validate": (jsonSchema) => !!jsonSchema['eventSchemas'],
