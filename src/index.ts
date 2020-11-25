@@ -1,15 +1,6 @@
-import { PluginMeta, PluginEvent, PluginAttachment } from 'posthog-plugins'
-import { SchemaObject, SchemaEvent } from './types'
+import { PluginEvent } from 'posthog-plugins'
+import { SchemaEvent, Meta } from './types'
 import { isValidSchemaFile } from './lib'
-
-interface Meta extends PluginMeta {
-    attachments: {
-        eventSchemaFile?: PluginAttachment
-    },
-    global: {
-        schemaFile?: SchemaObject
-    }
-}
 
 export function setupPlugin({ attachments, global }: Meta) {
     try {

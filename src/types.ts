@@ -1,3 +1,5 @@
+import { PluginMeta, PluginAttachment } from 'posthog-plugins'
+
 interface SchemaProp {
     type: string
     required?: boolean
@@ -16,5 +18,13 @@ export interface SchemaObject {
     eventSchemas: {
         [key: string]: SchemaEvent
     }
+}
 
+export interface Meta extends PluginMeta {
+    attachments: {
+        eventSchemaFile?: PluginAttachment
+    },
+    global: {
+        schemaFile?: SchemaObject
+    }
 }
