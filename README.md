@@ -50,7 +50,6 @@ It also:
 ### Short Term
 
 - Create an interface to generate the config file (In Progress)
-- Rewrite plugin in TypeScript
 - Friendlier config (e.g. accept `1`, `'true'`, and `true` for toggles)
 - More config options, such as:
     - List of events to ingest
