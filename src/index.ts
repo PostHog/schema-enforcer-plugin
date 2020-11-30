@@ -10,7 +10,6 @@ export function setupPlugin({ attachments, global }: Meta) {
     }
 
     isValidSchemaFile(global.schemaFile)
-
 }
 
 export function processEvent(event: PluginEvent, { global }) {
@@ -19,8 +18,10 @@ export function processEvent(event: PluginEvent, { global }) {
 
     // For events not specified in the schema file
     if (!eventSchema) {
-        if (schema.onlyIngestEventsFromFile) return // Only ingest if schema present
-        
+        // Only ingest if schema present
+        if (schema.onlyIngestEventsFromFile) {
+            return
+        }
         return event // Otherwise ingest without checking
     }
 
@@ -30,17 +31,21 @@ export function processEvent(event: PluginEvent, { global }) {
 
     for (const [propName, propSchema] of Object.entries(eventSchema.schema)) {
         const eventPropertyVal = event.properties[propName]
-        
+
         if (
             (!eventPropertyVal && propSchema.required) || // Property missing
-            (typeof eventPropertyVal !== propSchema.type.toLowerCase()) // Wrong type
-        ) return
+            typeof eventPropertyVal !== propSchema.type.toLowerCase() // Wrong type
+        ) {
+            return
+        }
 
         validProps[propName] = eventPropertyVal
     }
 
     // Ingest event only with relevant properties
-    if (schemaPropsOnly) event.properties = validProps
+    if (schemaPropsOnly) {
+        event.properties = validProps
+    }
 
     return event
 }

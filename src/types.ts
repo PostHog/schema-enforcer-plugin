@@ -10,7 +10,6 @@ export interface SchemaEvent {
     schema: {
         [key: string]: SchemaProp
     }
-
 }
 
 export interface SchemaObject {
@@ -23,7 +22,7 @@ export interface SchemaObject {
 export interface Meta extends PluginMeta {
     attachments: {
         eventSchemaFile?: PluginAttachment
-    },
+    }
     global: {
         schemaFile?: SchemaObject
     }
