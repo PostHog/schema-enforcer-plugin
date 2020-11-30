@@ -1,45 +1,45 @@
 {
-  "name": "posthog-schema-enforcer-plugin",
-  "version": "0.0.3",
-  "description": "Enforce schema on events to ensure clean data.",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "yarn run clean && yarn run compile",
-    "clean": "rimraf dist/*",
-    "compile": "rollup -c",
-    "prepublish": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PostHog/posthog-schema-enforcer-plugin.git"
-  },
-  "author": "Yakko Majuri",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/PostHog/posthog-schema-enforcer-plugin/issues"
-  },
-  "homepage": "https://github.com/PostHog/posthog-schema-enforcer-plugin#readme",
-  "devDependencies": {
-    "posthog-plugins": "^0.1.2",
-    "rimraf": "^3.0.0",
-    "rollup": "^2.22.1",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-dts": "^1.4.9",
-    "rollup-plugin-node-builtins": "^2.1.2",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.5",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.5.2",
-    "prettier": "^2.2.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+    "name": "posthog-schema-enforcer-plugin",
+    "version": "0.0.3",
+    "description": "Enforce schema on events to ensure clean data.",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "yarn run clean && yarn run compile",
+        "clean": "rimraf dist/*",
+        "compile": "rollup -c",
+        "prepublish": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PostHog/posthog-schema-enforcer-plugin.git"
+    },
+    "author": "Yakko Majuri",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/PostHog/posthog-schema-enforcer-plugin/issues"
+    },
+    "homepage": "https://github.com/PostHog/posthog-schema-enforcer-plugin#readme",
+    "devDependencies": {
+        "posthog-plugins": "^0.1.2",
+        "rimraf": "^3.0.0",
+        "rollup": "^2.22.1",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-dts": "^1.4.9",
+        "rollup-plugin-node-builtins": "^2.1.2",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-typescript2": "^0.27.1",
+        "ts-node": "^9.0.0",
+        "typescript": "^4.0.5",
+        "husky": "^4.3.0",
+        "lint-staged": "^10.5.2",
+        "prettier": "^2.2.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx,json,yml}": "prettier --write"
     }
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx,json,yml}": "prettier --write"
-  }
 }
