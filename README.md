@@ -1,3 +1,4 @@
+![PostHog Schema Enforcer Plugin mascot](./police-hog.png)
 # PostHog Schema Enforcer Plugin (WIP)
 
 ## Objective
