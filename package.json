@@ -2,7 +2,7 @@
     "name": "@posthog/schema-enforcer-plugin",
     "version": "0.0.3",
     "description": "Enforce schema on events to ensure clean data.",
-    "main": "dist/index.js",
+    "main": "src/index.ts",
     "scripts": {
         "build": "yarn run clean && yarn run compile",
         "clean": "rimraf dist/*",
