@@ -110,7 +110,13 @@ export function processEvent(event: PluginEvent, { global }) {
             (!eventPropertyVal && propSchema.required) || // Property missing
             typeof eventPropertyVal !== propSchema.type.toLowerCase() // Wrong type
         ) {
-            console.log('rejecting - wrong properties')
+            console.log('rejecting - wrong properties', {
+                eventPropertyVal,
+                type: typeof eventPropertyVal,
+                reqTye: propSchema.type.toLowerCase(),
+                te: eventPropertyVal,
+                xe: propSchema.required,
+            })
             return
         }
 
