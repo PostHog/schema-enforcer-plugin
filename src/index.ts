@@ -93,7 +93,6 @@ export function processEvent(event: PluginEvent, { global }) {
     if (!eventSchema) {
         // Only ingest if schema present
         if (schema.onlyIngestEventsFromFile) {
-            console.log('rejecting - event not configured')
             return
         }
         return event // Otherwise ingest without checking
@@ -108,15 +107,9 @@ export function processEvent(event: PluginEvent, { global }) {
 
         if (
             (!eventPropertyVal && propSchema.required) || // Property missing
-            typeof eventPropertyVal !== propSchema.type.toLowerCase() // Wrong type
+            (eventPropertyVal !== undefined && typeof eventPropertyVal !== propSchema.type.toLowerCase()) // Wrong type
         ) {
-            console.log('rejecting - wrong properties', {
-                eventPropertyVal,
-                type: typeof eventPropertyVal,
-                reqTye: propSchema.type.toLowerCase(),
-                te: eventPropertyVal,
-                xe: propSchema.required,
-            })
+            console.log('rejecting - wrong properties')
             return
         }
 
