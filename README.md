@@ -1,6 +1,9 @@
 ![PostHog Schema Enforcer Plugin mascot](./police-hog.png)
 # PostHog Schema Enforcer Plugin (WIP)
 
+> [!WARNING]  
+> This plugin has been deprecated. [We are currently working on a native solution.](https://posthog.com/docs/cdp/filter-out).
+
 ## Objective
 
 This plugin allows users to specify schemas for events ingested so that they can prevent the ingestion of events that don't match a specified schema.
