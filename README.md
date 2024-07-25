@@ -2,7 +2,7 @@
 # PostHog Schema Enforcer Plugin (WIP)
 
 > [!WARNING]  
-> This plugin has been deprecated. [We are currently working on a native solution.](https://posthog.com/docs/cdp/filter-out).
+> This plugin has been deprecated. [We are currently working on a native solution.](https://github.com/PostHog/posthog/issues/23979).
 
 ## Objective
 
